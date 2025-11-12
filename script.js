@@ -10,9 +10,15 @@ function calcular() {
   const resultado = document.getElementById('resultado');
 
   // Validació
+  if (bach > 10 || pau > 10 || opt1 > 10 || opt2 > 10) {
+  resultado.innerHTML = "<span style='color:red'>⚠️ Les notes no poden superar el 10.</span>";
+  return;
+}
+
   if (isNaN(bach) || isNaN(pau)) {
     resultado.innerHTML = "<span style='color:red'>⚠️ Introdueix la nota de Batxillerat i la de la PAU.</span>";
     return;
+
   }
 
   // Càlculs
@@ -98,3 +104,15 @@ function reiniciar() {
   document.getElementById('resultado').innerHTML = "";
 
 }
+
+const resultatBox = document.querySelector('.result-box');
+if (notaFinal >= 10) resultatBox.style.background = '#e7f9ef';
+else if (notaFinal >= 7) resultatBox.style.background = '#fffbe7';
+else resultatBox.style.background = '#ffe7e7';
+
+localStorage.setItem('bach', bach);
+localStorage.setItem('pau', pau);
+
+window.onload = () => {
+  if (localStorage.getItem('bach')) document.getElementById('bach').value = localStorage.getItem('bach');
+};
