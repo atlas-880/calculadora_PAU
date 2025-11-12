@@ -1,0 +1,160 @@
+@font-face {
+  font-family: 'Mont'; /* Nom que utilitzaràs després */
+  src: url('Fonts/Montserrat.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+body {
+  font-family: Mont, sans-serif;
+  text-align: center;
+  margin: 4em;
+  padding: top 1em;
+  background: #dceeff;
+  color: #351717;
+}
+
+h1 {
+  color: #0078d7;
+  margin-bottom: 1.5em;
+}
+
+.form {
+  background: white;
+  padding: 2.8em;
+  border-radius: 1em;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: inline-block;
+  margin-top: 0;  
+}
+
+input {
+  display: block;
+  margin: 0.5em auto 1em;
+  padding: 0.5em;
+  width: 60%;
+  border-radius: 0.5em;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+button {
+  padding: 0.7em 1.2em;
+  background: #0078D7;
+  color: white;
+  border: none;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+button:hover {
+  background: #1d7bbe;
+}
+.fase-obligatoria {
+  color: #333;
+  font-style: normal;
+  margin-top: -0.4em;   /* menys espai a dalt */
+  margin-bottom: 0.8em;
+}
+
+.fase-opcional {
+  color: #333;
+  font-style: normal;
+  margin-top: -1em;   /* més separació amb la part anterior */
+  margin-bottom: 0.8em;
+}
+
+
+.fase-opcional {
+  color: #333;
+  font-style: normal;
+  margin-top: 1.5em;   /* més separació amb la part anterior */
+  margin-bottom: 0.8em;
+}
+
+
+
+.optional {
+  border: 1px solid #ddd;
+  padding: 1em;
+  margin: em ;
+  border-radius: 0.5em;
+  background: #fafafa;
+}
+.reset-btn {
+  margin-top: 1em;
+  padding: 0.6em 1.2em;
+  background: #FF6B6B;
+  color: white;
+  border: none;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+
+.reset-btn:hover {
+  background: #e04848;
+}
+
+.result-box {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 0.9em;
+    padding: 1em;
+  }
+
+  .result-box {
+    width: 95%;
+  }
+}
+
+
+
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Barra de progrés */
+.progress-container {
+  width: 80%;
+  background: #e5e5e5;
+  border-radius: 1em;
+  margin: 0.5em auto 1em;
+  height: 18px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #0078d7;
+  width: 0;
+  border-radius: 1em;
+  transition: width 1s ease-in-out;
+}
+
+/* Reajustar el result-box */
+.result-box {
+  margin-top: 1.5em;
+  padding: 1.5em 1em 2em;
+  background: #fff;
+  border-radius: 1em;
+  display: inline-block;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Nota més visible però sense canviar color */
+.nota {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #222;
+}
+
+
+

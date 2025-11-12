@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="Fonts/1b782146-a111-4dd7-ac9d-3bb8da1d618d.png">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Calculadora de Nota Universitaria</title>
+</head>
+<body>
+  <h1>Calculadora de Nota d'Accés a la Universitat</h1>
+
+    <div class="form">
+   <h3 class="fase-obligatoria">Fase Obligatòria</h3>
+
+    <label>Nota de Batxillerat:</label>
+    <input type="number" id="bach" step="0.01" min="0" max="10">
+
+    <label>Nota de Fase General (PAU):</label>
+    <input type="number" id="pau" step="0.01" min="0" max="10">
+
+    <h3 class="fase-opcional">Fase Opcional</h3>
+
+    <div class="optional">
+      <label>Matèria 1 - Nota:</label>
+      <input type="number" id="opt1" step="0.01" min="0" max="10">
+      <label>Ponderació:</label>
+      <select id="pond1">
+        <option value="0.2">0.2</option>
+        <option value="0.1">0.1</option>
+        <option value="0">Cap</option>
+      </select>
+    </div>
+    <p></p>
+
+    <div class="optional">
+      <label>Matèria 2 - Nota:</label>
+      <input type="number" id="opt2" step="0.01" min="0" max="10">
+      <label>Ponderació:</label>
+      <select id="pond2">
+        <option value="0.2">0.2</option>
+        <option value="0.1">0.1</option>
+        <option value="0">Cap</option>
+    
+       
+      </select>
+    </div>
+<p></p>
+    <button onclick="calcular()">Calcular nota final</button>
+  </div>
+
+  
+ <p id="resultado"></p>
+
+  <script src="script.js"></script>
+
+
+</div>
+
+
+
+
+
+</body>
+
+
+
+<footer>
+
+<footer>
+    <div class="footer-content">
+        <p class="copyright">
+            &copy; 2025 Calculadora de Nota Universitària. Tots els drets reservats.
+            | <a href="#" class="footer-link">Avís Legal</a>
+            | <a href="#" class="footer-link">Política de Privacitat</a>
+        </p>
+
+        <div class="share-icons">
+            <h4>Comparteix aquesta eina:</h4>
+            
+            <a href="https://twitter.com/intent/tweet?text=He%20calculat%20la%20meva%20nota!%20Prova-ho%20tu%20també:%20[LA_TEVA_URL_AQUI]" target="_blank" aria-label="Compartir a X (Twitter)">
+                <img src="icons/twitter.png" alt="X (Twitter)" class="social-icon">
+            </a>
+
+            <a href="whatsapp://send?text=He%20calculat%20la%20meva%20nota%20d'accés!%20Prova-ho%20tu%20també:%20[LA_TEVA_URL_AQUI]" data-action="share/whatsapp/share" target="_blank" aria-label="Compartir a WhatsApp">
+                <img src="icons/whatsapp.png" alt="WhatsApp" class="social-icon">
+            </a>
+
+            <a href="[EL_TEU_PERFIL_INSTAGRAM]" target="_blank" aria-label="Segueix-nos a Instagram">
+                <img src="icons/instagram.png" alt="Instagram" class="social-icon">
+            </a>
+
+            </div>
+
+    </div>
+</footer>
+
+
+</footer>
+</html>
