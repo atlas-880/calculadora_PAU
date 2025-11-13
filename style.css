@@ -16,6 +16,24 @@ body {
   color: #351717;
 }
 
+
+/* Animació d'entrada global */
+body {
+  animation: fadeSlideIn 0.8s ease-out;
+  -webkit-animation: fadeSlideIn 0.8s ease-out;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 h1 {
   font-weight: 700;
   font-size: 2.2rem;
@@ -345,14 +363,78 @@ a[aria-label*="Instagram"] .social-icon:hover {
   opacity: 1;
 }
 
-/* Responsiu */
-@media (max-width: 600px) {
-  .footer-content {
-    gap: 0.8em;
+/* ===== DISSENY RESPONSIVE MILLORAT ===== */
+@media (max-width: 768px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
   }
+
+  body {
+    font-size: 0.95em;
+    margin: 1em auto;
+    background: #dceeff;
+  }
+
+  h1 {
+    font-size: 1.4em;
+    margin-bottom: 1em;
+    padding: 0 0.5em;
+  }
+
+  /* Formulari més compacte */
+  .form {
+    width: 90%;
+    max-width: 360px;
+    padding: 1.5em;
+    margin: 0 auto;
+    border-radius: 0.8em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+
+  label {
+    font-size: 0.9em;
+  }
+
+  input, select {
+    width: 100%;
+    font-size: 1em;
+    padding: 0.5em;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1em;
+    padding: 0.8em;
+  }
+
+  .result-box {
+    width: 90%;
+    max-width: 360px;
+    padding: 1.5em;
+    margin: 1.5em auto;
+  }
+
+  /* Footer adaptat */
+  footer {
+    padding: 1.5em 1em;
+    text-align: center;
+  }
+
+  .footer-content {
+    gap: 1em;
+  }
+
+  .socials {
+    flex-wrap: wrap;
+    gap: 0.5em;
+  }
+
   .social-icon {
-    width: 26px;
-    height: 26px;
+    width: 28px;
+    height: 28px;
   }
 }
 

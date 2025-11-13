@@ -59,7 +59,7 @@ function calcular() {
       </div>
 
       <p class="detalls">
-        (Fase general: ${faseGeneralArrodonida} | Fase opcional: +${faseOpcionalArrodonida})
+        (Fase obligatòria: ${faseGeneralArrodonida} | Fase opcional: +${faseOpcionalArrodonida})
       </p>
       <p class="missatge">${missatge}</p>
       <button onclick="reiniciar()" class="reset-btn">Calcular de nou</button>
