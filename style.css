@@ -1,185 +1,142 @@
+/* === Font === */
 @font-face {
-  font-family: 'Mont'; /* Nom que utilitzaràs després */
+  font-family: 'Mont';
   src: url('Fonts/Montserrat.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
-
-
+/* === Cos principal === */
 body {
-  font-family: Mont, sans-serif;
+  font-family: 'Montserrat', 'Mont', sans-serif;
   text-align: center;
-  margin: 4em;
-  padding: top 1em;
   background: #dceeff;
   color: #351717;
-}
-
-
-/* Animació d'entrada global */
-body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
   animation: fadeSlideIn 0.8s ease-out;
-  -webkit-animation: fadeSlideIn 0.8s ease-out;
 }
 
 @keyframes fadeSlideIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
+/* === Títol === */
 h1 {
   font-weight: 700;
-  font-size: 2.2rem;
+  font-size: 2.1rem;
   color: #0078d7;
-  letter-spacing: 0.5px;
-  margin-bottom: 1.2em;
+  letter-spacing: 0.4px;
+  margin: 1.5em 0 0.8em;
   position: relative;
   display: inline-block;
-}
-
-/* línia decorativa suau sota el títol */
-h1::after {
-  content: "";
-  display: block;
-  width: 60%;
-  margin: 0.3em auto 0;
-  height: 3px;
-  background: linear-gradient(90deg, #0078d7, #00a8ff);
-  border-radius: 3px;
-  opacity: 0.5;
+  text-align: center;
 }
 
 @keyframes slideIn {
   from { opacity: 0; transform: translateY(-15px); }
   to { opacity: 1; transform: translateY(0); }
 }
-h1 {
-  animation: slideIn 0.8s ease-in-out;
+
+h1::after {
+  content: "";
+  display: block;
+  width: 55%;
+  margin: 0.4em auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0078d7, #00a8ff);
+  border-radius: 3px;
+  opacity: 0.6;
 }
 
-
-
+/* === Formulari === */
 .form {
-  background: white;
-  padding: 2.8em;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  border: 1px solid #e3e9ef;
+  padding: 2.2em;
   border-radius: 1em;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  display: inline-block;
-  margin-top: 0;  
+  width: 90%;
+  max-width: 420px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-input {
+
+label {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 0.3em;
+  text-align: center;
+  width: 80%;
+}
+
+input, select {
   display: block;
   margin: 0.5em auto 1em;
-  padding: 0.5em;
-  width: 60%;
+  padding: 0.6em;
+  width: 75%;
   border-radius: 0.5em;
   border: 1px solid #ccc;
   text-align: center;
+  font-size: 1em;
 }
 
 button {
-  padding: 0.7em 1.2em;
+  padding: 0.8em 1.5em;
   background: #0078D7;
   color: white;
   border: none;
   border-radius: 0.5em;
   cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0,120,215,0.15);
 }
 button:hover {
   background: #1d7bbe;
-}
-.fase-obligatoria {
-  color: #333;
-  font-style: normal;
-  margin-top: -0.4em;   /* menys espai a dalt */
-  margin-bottom: 0.8em;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,120,215,0.3);
 }
 
+/* === Fases === */
+.fase-obligatoria,
 .fase-opcional {
-  color: #333;
-  font-style: normal;
-  margin-top: -1em;   /* més separació amb la part anterior */
+  color: #004b8d;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top:0.4em;
   margin-bottom: 0.8em;
+  text-align: center;
+  position: relative;
+}
+.fase-obligatoria::after,
+.fase-opcional::after {
+  content: "";
+  display: block;
+  width: 60%;
+  margin: 0.4em auto;
+  height: 2px;
+  background: #0078d7;
+  border-radius: 1px;
+  opacity: 0.25;
 }
 
-
-.fase-opcional {
-  color: #333;
-  font-style: normal;
-  margin-top: 1.5em;   /* més separació amb la part anterior */
-  margin-bottom: 0.8em;
-}
-
-
-
+/* === Opcional === */
 .optional {
   border: 1px solid #ddd;
   padding: 1em;
-  margin: em ;
   border-radius: 0.5em;
   background: #fafafa;
-}
-.reset-btn {
-  margin-top: 1em;
-  padding: 0.6em 1.2em;
-  background: #FF6B6B;
-  color: white;
-  border: none;
-  border-radius: 0.5em;
-  cursor: pointer;
+  margin-bottom: 1em;
+  width: 85%;
+  text-align: center;
 }
 
-.reset-btn:hover {
-  background: #e04848;
-}
-
-.result-box {
-  animation: fadeIn 0.8s ease-in-out;
-}
-
-@media (max-width: 600px) {
-  input, select, button {
-    width: 90%;
-    font-size: 1em;
-  }
-}
-
-
-
-
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Barra de progrés */
-.progress-container {
-  width: 80%;
-  background: #e5e5e5;
-  border-radius: 1em;
-  margin: 0.5em auto 1em;
-  height: 18px;
-  overflow: hidden;
-}
-
-.progress-bar {
-  height: 100%;
-  background: #0078d7;
-  width: 0;
-  border-radius: 1em;
-  transition: width 1s ease-in-out;
-}
-
-/* Reajustar el result-box */
+/* === Resultat === */
 .result-box {
   margin-top: 1.5em;
   padding: 1.5em 1em 2em;
@@ -189,111 +146,60 @@ button:hover {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   animation: fadeIn 0.8s ease-in-out;
 }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-/* Nota més visible però sense canviar color */
 .nota {
   font-size: 1.5em;
   font-weight: bold;
   color: #222;
 }
 
-.form {
-  max-width: 420px;
-  width: 90%;
-  margin: 0 auto;
+.progress-container {
+  width: 80%;
+  background: #e5e5e5;
+  border-radius: 1em;
+  margin: 0.5em auto 1em;
+  height: 18px;
+  overflow: hidden;
 }
-
-body {
-  margin: 2em auto;
-  padding: 0;
-  max-width: 900px;
-}
-
-body {
-  font-family: 'Montserrat', sans-serif;
-  letter-spacing: 0.3px;
-  line-height: 1.6;
-}
-h1 {
-  font-weight: 600;
-  font-size: 1.8rem;
-}
-label {
-  font-weight: 500;
-  color: #333;
-}
-
-.form {
-  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-  border: 1px solid #e3e9ef;
-  padding: 2.2em 2.8em;
-}
-
-button {
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 10px rgba(0,120,215,0.15);
-}
-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0,120,215,0.3);
-}
-
-.reset-btn {
-  background: #ccc;
-  color: #222;
-}
-.reset-btn:hover {
-  background: #bbb;
-}
-
-.fase-obligatoria::after,
-.fase-opcional::after {
-  content: "";
-  display: block;
-  width: 60%;
-  margin: 0.5em auto;
-  height: 2px;
+.progress-bar {
+  height: 100%;
   background: #0078d7;
-  border-radius: 1px;
-  opacity: 0.2;
+  width: 0;
+  border-radius: 1em;
+  transition: width 1s ease-in-out;
 }
 
-
-/* ===== FOOTER ESTIL PROFESSIONAL ===== */
+/* === FOOTER === */
 footer {
-  width: 100vw; /* ocupa tot l’ample visible de la pantalla */
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-
+  width: 100%;
   background: linear-gradient(180deg, #f3f8ff 0%, #dceeff 100%);
   border-top: 1px solid #b7d3f5;
-  padding: 2em 1em;
-  margin-top: 6em;
+  padding: 2.5em 0;
+  margin-top: 5em;
   text-align: center;
   color: #333;
-  font-family: 'Montserrat', sans-serif;
   box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.05);
 }
 
-
 .footer-content {
+  max-width: 420px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 1.2em;
-  max-width: 900px;
-  margin: 0 auto;
+  gap: 1.5em;
 }
 
 .copyright {
   font-size: 0.9em;
   color: #444;
   line-height: 1.6;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 90%;
 }
 
 .footer-link {
@@ -303,11 +209,11 @@ footer {
   transition: color 0.2s ease;
 }
 .footer-link:hover {
+  color: #005bb5;
   text-decoration: underline;
-   color: #005bb5;
 }
 
-/* Secció de xarxes socials */
+/* Xarxes socials */
 .social-section {
   display: flex;
   flex-direction: column;
@@ -317,27 +223,21 @@ footer {
 
 .social-section h4 {
   font-size: 1em;
-  color: #004b8d;
-  margin: 0;
   font-weight: 600;
+  color: #004b8d;
+  margin: 0.4em 0 0.3em;
 }
 
-/* Icones socials */
 .socials {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.8em;
-}
-
-.socials a {
-  display: inline-block;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  gap: 0.9em;
 }
 
 .social-icon {
-  width: 30px;
-  height: 30px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   background: white;
   padding: 6px;
@@ -347,121 +247,99 @@ footer {
   vertical-align: middle;
 }
 
-a[aria-label*="Twitter"] .social-icon:hover {
-  background: #1da1f2;
-  transform: translateY(-2px);
-  opacity: 1;
-}
-a[aria-label*="WhatsApp"] .social-icon:hover {
-  background: #25d366;
-  transform: translateY(-2px);
-  opacity: 1;
-}
+a[aria-label*="Twitter"] .social-icon:hover { background: #1da1f2; transform: translateY(-2px); opacity: 1; }
+a[aria-label*="WhatsApp"] .social-icon:hover { background: #25d366; transform: translateY(-2px); opacity: 1; }
 a[aria-label*="Instagram"] .social-icon:hover {
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
   transform: translateY(-2px);
   opacity: 1;
 }
 
-/* ===== DISSENY RESPONSIVE MILLORAT ===== */
+/* === Responsive === */
 @media (max-width: 768px) {
-  html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden;
-  }
+  h1 { font-size: 1.4em; margin: 1.2em 0; }
+  .form { width: 92%; padding: 1.5em; }
+  input, select, button { width: 100%; max-width: 280px; }
+  .optional { width: 100%; }
+  footer { padding: 2em 1em; }
+  .footer-content { max-width: 340px; gap: 1em; }
+  .copyright { font-size: 0.8em; }
+}
 
-  body {
-    font-size: 0.95em;
-    margin: 1em auto;
-    background: #dceeff;
-  }
 
-  h1 {
-    font-size: 1.4em;
-    margin-bottom: 1em;
-    padding: 0 0.5em;
-  }
-
-  /* Formulari més compacte */
-  .form {
-    width: 90%;
-    max-width: 360px;
-    padding: 1.5em;
-    margin: 0 auto;
-    border-radius: 0.8em;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  }
-
-  label {
-    font-size: 0.9em;
-  }
-
-  input, select {
-    width: 100%;
-    font-size: 1em;
-    padding: 0.5em;
-  }
-
-  button {
-    width: 100%;
-    font-size: 1em;
-    padding: 0.8em;
-  }
-
-  .result-box {
-    width: 90%;
-    max-width: 360px;
-    padding: 1.5em;
-    margin: 1.5em auto;
-  }
-
-  /* Footer adaptat */
-  footer {
-    padding: 1.5em 1em;
-    text-align: center;
-  }
-
-  .footer-content {
-    gap: 1em;
-  }
-
-  .socials {
-    flex-wrap: wrap;
-    gap: 0.5em;
-  }
-
-  .social-icon {
-    width: 28px;
-    height: 28px;
-  }
+/* ===== ESTIL PER A LES PÀGINES LEGALS ===== */
+body.legal-page {
+  background: #dceeff;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 3em 1em;
+  color: #222;
 }
 
 .legal-container {
   max-width: 800px;
   margin: 3em auto;
-  background: white;
-  padding: 2.5em;
+  background: #ffffff;
+  padding: 2.5em 2.8em;
   border-radius: 1em;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   text-align: left;
+  line-height: 1.7;
 }
 
+/* Títol principal */
 .legal-container h1 {
   color: #0078d7;
   margin-bottom: 1em;
-  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: left;
+  position: relative;
 }
 
+.legal-container h1::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2.5px;
+  background: #0078d7;
+  margin-top: 0.4em;
+  border-radius: 2px;
+}
+
+/* Subtítols */
 .legal-container h2 {
   color: #004b8d;
-  margin-top: 1.5em;
+  margin-top: 1.8em;
   margin-bottom: 0.5em;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
+/* Paràgrafs */
 .legal-container p {
   color: #333;
-  line-height: 1.7;
   margin-bottom: 1em;
+  font-size: 1em;
+}
+
+/* Enllaç de retorn */
+.legal-container a.footer-link {
+  display: inline-block;
+  margin-top: 1.5em;
+  color: #0078d7;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.legal-container a.footer-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsiu per mòbils */
+@media (max-width: 600px) {
+  .legal-container {
+    padding: 2em 1.2em;
+    border-radius: 0.8em;
+  }
 }
