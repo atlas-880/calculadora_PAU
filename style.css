@@ -178,7 +178,7 @@ footer {
   width: 100%;
   background: linear-gradient(180deg, #f3f8ff 0%, #dceeff 100%);
   border-top: 1px solid #b7d3f5;
-  padding: 2.5em 0;
+  padding: 1.5em;
   margin-top: 5em;
   text-align: center;
   color: #333;
@@ -186,7 +186,7 @@ footer {
 }
 
 .footer-content {
-  max-width: 420px;
+  max-width: 702px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -343,3 +343,91 @@ body.legal-page {
     border-radius: 0.8em;
   }
 }
+/* ===== INTRODUCCIÓ ALS RECURSOS ===== */
+
+.resources-intro {
+  max-width: 650px;
+  margin: 3em auto 1em;
+  text-align: center;
+  padding: 0 1em;
+}
+
+.resources-intro p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+
+/* ===== TARGETES DE RECURSOS ===== */
+
+.resources {
+  margin: 2em auto 3.5em;
+  text-align: center;
+}
+
+.resources h2 {
+  font-size: 1.5rem;
+  color: #004b8d;
+  margin-bottom: 1em;
+  font-weight: 600;
+}
+
+.resource-grid {
+  display: flex;
+  gap: 1.2em;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.resource-card {
+  background: white;
+  border-radius: 1em;
+  padding: 1.3em 1.5em;
+  width: 260px;
+  text-decoration: none;
+  color: #333;
+  border: 1px solid #e3e9ef;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  transition: all 0.25s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+.resource-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.4em;
+  color: #0078d7;
+}
+
+.resource-card p {
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .resource-card {
+    width: 90%;
+  }
+
+  .resources-intro {
+    margin-top: 2em;
+  }
+}
+
+.intro-text {
+  max-width: 750px;
+  margin: 1.5em auto 2.2em;
+  padding: 0 1em;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #333;
+  opacity: 0.95;
+}
+
